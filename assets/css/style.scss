@@ -20,7 +20,7 @@ body{
     font-weight: 705;
     display: flex;
     flex-direction: column;
-    color: var(bone);
+    background: #f5f5f5;
     .container{
         position: fixed;
         width: 100%;
@@ -205,11 +205,12 @@ body{
         padding: 2rem 0 3rem 0;
     }
     #home{
-        background-color: var(--dark);
+        padding-top: 5rem;
         img{
-            width: 50%;
-            max-width: 300px;
+            width: 60%;
             z-index: 5;
+            margin-bottom: 2rem;
+            max-width: 300px;
         }
         .main-container{
             z-index: 2;
@@ -219,23 +220,22 @@ body{
                 text-align: center;
                 line-height: 2rem;
                 margin: 1rem;
-                color: var(--lightGreen);
+                color:black;
                 p{
                     font-weight: 709;
                     font-size: 24px;
-                    color: var(--lightGray);
                 }
             }
             .cv{
                 margin: 1.5rem 0 1rem 0;
                 border-radius: 15px;
                 padding: 0.2rem 0;
-                background-color: rgb(82, 64, 99);
+                background-color: rgba(53, 182, 173, 0.5);
                 color: black;
+                border: 1px solid black;
             }
             .typing{
                 position: relative;
-                color:cadetblue;
                 width: 180px;
             }
            .typing::after{
@@ -244,8 +244,8 @@ body{
                 left: 0;
                 height: 100%;
                 width: 97%;
-                background-color: var(--dark);
-                border-left: 2px solid cadetblue;
+                background-color: #f5f5f5;
+                border-left: 2px black;
                 animation: typing 6s steps(19) infinite;
             }
             @keyframes typing {
@@ -255,7 +255,7 @@ body{
                 }
                 100%{
                     left: 0%;
-                    width: 170px;
+                    width: 180px;
                 }
             }
         }
@@ -263,26 +263,26 @@ body{
             z-index:1;
             position: absolute;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             height: 100vh;
             width: 100%;
+            display: none;
             .bubble{
                 position: relative;
-                width: 10px;
-                height: 10px;
-                background-color: var(--lightGreen);
-                margin: 0 4px;
-                border-radius: 50% 1px 50% 1px;
-                box-shadow: 0 0 0 10px #1f312fb1, 0 0 50px #112f26, 0 0 100px #5e5e5e;   
-                animation: animate 15s linear infinite;
-                animation-duration: calc(120s / var(--i));           
+                width: 5px;
+                height: 5px;
+                background-color: rgb(30, 30, 30);
+                border-radius: 50%; 
+                //animation: animate 15s linear infinite;
+                //animation-duration: calc( 60s / var(--i));           
             }
             @keyframes animate {
                 0%{
-                    transform: translateY(100vh) scale(0);
+                    transform: translateX(130vh) scale(0.5);
                 }
                 100%{
-                    transform: translateY(0) scale(0.5);
+                    transform: translateX(0) scale(0.5);
                 }
             }
         }
@@ -292,67 +292,67 @@ body{
         z-index: 4;
         font-weight: 707;
         margin: 2rem;
-        color: rgb(209, 209, 209);
+        color: rgb(53,181,173);
     }
     #about{
-        display: flex;
-        flex-direction: column;
-        background-color: var(--darkGreen);
-        p{
-            width: 90%;
-            z-index: 4;
-            margin: 0 3rem;
-            color: whitesmoke;
-            text-align:justify;
-            background-color:rgba(46, 64, 63, 0.788);
-            border-radius: 20px;
-            padding: 1rem 1.5rem;
-        }
-        .media{
-            z-index: 4;
-            background-color:rgba(46, 64, 63, 0.788) ;
-            padding: 1rem;
-            border-radius: 20px;
-            margin-top: 1rem;
+        .about-text{
             display: flex;
-            width: 70%;
-            justify-content: space-around;
-            a{
-                cursor: pointer;
-                .fa-brands{
-                    font-size: 30px;
-                    color: white;
+            flex-direction: column;
+            align-items: center;
+            p{
+                width: 90%;
+                max-width: 500px;
+                z-index: 4;
+                margin: 0 3rem;
+                color: rgb(0, 0, 0);
+                text-align:justify;
+                //background-color:rgba(46, 64, 63, 0.788);
+                background-color: transparent;
+                border-radius: 20px;
+                padding: 1rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .media{
+                z-index: 4;
+                //background-color:rgba(46, 64, 63, 0.788) ;
+                padding: 1rem;
+                border-radius: 20px;
+                margin-top: 1rem;
+                display: flex;
+                width: 70%;
+                justify-content: space-around;
+                a{
                     cursor: pointer;
+                    .fa-brands{
+                        font-size: 30px;
+                        color: rgb(0, 0, 0);
+                        cursor: pointer;
+                    }
                 }
             }
         }
-        img{
-            position: absolute;
-            width: 400px;
-            z-index: 1;
-            left: -150px;
-        }
-        
-
     }
     #skills{
-        background-color: var(--dark);
         .skill-container{
-            width: 80%;
+            width: 90%;
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
             flex-wrap: wrap;   
-            justify-content: center;    
+            justify-content: space-evenly;  
+            border: 1px solid grey;
+            padding: 2rem;
+            border-radius: 10px;  
             .card-skill{
+                padding: 1rem 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 0.5rem;
-                width: 100px;
-                height: 100px;
-                color: var(--bone);
-                border-radius: 50% 20% / 10% 40%;
+                width: 50%;
+                max-width: 180px;
+                color: black;
+                border-radius: 10px;
                 background-color: rgba(46, 64, 63, 0.505);
                 box-shadow: 0 0 3px 2px rgb(32, 45, 45);
                 .fa-brands{
@@ -402,14 +402,128 @@ body{
         }
     }
     #training{
-        background-color: var(--darkGreen);
-        
+        .training-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+            .training-card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                border: solid 1px gray;
+                border-radius: 20px;
+                gap: 1rem;
+                width: 85%;
+                padding: 1rem 0.5rem;
+                background-color: #d9d9d9;
+                img{
+                    width: 70%;
+                    border-radius: 10px;
+                }
+                p{
+                    font-size: 11px;
+                }
+            }
+        }
     }
     #projects{
-        background-color: var(--dark);
+        .projects-container{
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            .projects-card{
+                width: 90%;
+                border: solid 1px gray;
+                border-radius: 20px 20px 20px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 100%;
+                    border-radius: 20px 20px 0 0;
+                    border: solid 1px gray;
+                }
+                p{
+                    width: 90%;
+                    margin-top: 1rem;
+                    text-align: center;
+                    font-weight: 400;
+                }
+                .button-container{
+                    display: flex;
+                    width: 70%;
+                    justify-content: space-around;
+                    margin: 1rem 0;
+                    button{
+                        background-color: rgba(53, 181,173,0.5);
+                        border-radius: 20px;
+                        padding: 0.25rem 1rem;
+                        border: solid 1px gray;
+                    }
+                }
+            }
+        }
     }
     #contact{
-        background-color: var(--darkGreen);
+        .contact-container{
+            width: 70%;
+            border: solid 1px gray;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            .contact-input{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                width: 100%;
+                input{
+                    background-color: #f5f5f5;
+                    border: solid 1px gray;
+                    border-radius: 10px;
+                    height: 40px;
+                    width: 80%;
+                    padding: 0 0.5rem;
+                    background-color: #d9d9d9;
+                }
+                .big{
+                    background-color: #f5f5f5;
+                    border: solid 1px gray;
+                    border-radius: 10px;
+                    height: 60px;
+                    width: 80%;
+                    padding: 0 0.5rem;
+                    background-color: #d9d9d9;
+                }
+            }
+            button{
+                border-radius: 20px;
+                padding: 0.2rem 1.5rem;
+                border: solid 1px gray;
+                background-color: rgba(53, 181,173,0.5);
+            }
+        }
+    }
+    .copyright{
+        padding: 0.5rem;
+        border-top: solid 1px gray;
+        p{
+            font-weight: 400;
+            width: 100%;
+            text-align: center;
+            span{
+                color: #4E8C90;
+                font-weight: 705;
+            }
+        }
     }
 }
 
@@ -457,11 +571,258 @@ body{
 
 @media screen and ( min-width: 720px) {
     body{
+        .container{
+                .bar-menu{
+                    display: none;
+                }
+                .navbar{
+                    border-bottom: 1px solid gray;
+                    .nav-link{
+                        background-color: transparent;
+                        position: fixed;
+                        right: 10px;
+                        top: 0;
+                        display: flex;
+                        height: 60px;
+                        width: 80vw;
+                        transition: none;
+                        font-size: 20px;
+                        padding: 1rem 0 0 0;
+                        gap: 1rem;
+                        li{
+                            a{
+                                color: rgb(53,181,173); 
+                            }
+                        }
+                        .one{
+                            position:static;
+                            transition: none;  
+                        }
+                        .two{
+                            position:static;
+                            transition: none;
+                        }
+                        .three{
+                            position:static;
+                            transition: none;
+                        }
+                        .four{
+                            position:static;
+                            transition: none
+                        }
+                        .five{
+                            position:static;
+                            transition: none;
+                        }
+                        .six{
+                            position:static;
+                            transition: none;
+                        }
+                    }
+                    .active-nav-link{
+                        background-color: transparent;
+                        position: fixed;
+                        right: 0;
+                        top: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        overflow-y: scroll;
+                        height: 60px;
+                        width: 100vw;
+                        transition: none;
+                        font-size: 20px;
+                        padding: 1rem 1rem 0 1.5rem;
+                        border-bottom: 1px solid gray;
+                        li{
+                            a{
+                                color: rgb(53,181,173); 
+                            }
+                        }
+                        .one{
+                            position:static;
+                            transition: none;  
+                            background-color: transparent;
+                        }
+                        .two{
+                            position:static;
+                            transition: none;
+                            background-color: transparent;
+                        }
+                        .three{
+                            position:static;
+                            transition: none;
+                            background-color: transparent;
+                        }
+                        .four{
+                            position:static;
+                            transition: none;
+                            background-color: transparent;
+                        }
+                        .five{
+                            position:static;
+                            transition: none;
+                            background-color: transparent;
+                        }
+                        .six{
+                            position:static;
+                            transition: none;
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+        }
         #home{
-            .bubbles{
-                .bubble{
-                    width: 30px;
-                    height: 30px;
+                flex-direction: row-reverse;
+                justify-content: space-evenly;
+                margin-top: 4rem;
+                .bubbles{
+                    .bubble{
+                        width: 5px;
+                        height: 5px;
+                    }
+                }
+            
+            
+        
+        }
+        #about{
+            .about-text{
+                width: 95%;
+                flex-direction: row;
+                p{
+                    width: 90%;
+                    max-width: 500px;
+                    z-index: 4;
+                    margin: 0 3rem;
+                    color: rgb(0, 0, 0);
+                    text-align:justify;
+                    background-color: transparent;
+                    //background-color:rgba(46, 64, 63, 0.788);
+                    border-radius: 20px;
+                    padding: 1rem 1.5rem;
+                    font-size: 24px;
+                }
+                .media{
+                   display: grid;
+                   grid-template-columns: repeat(4, 1fr);
+                   grid-auto-rows: repear(4,1fr);
+                   .one-brand{
+                    grid-column: 1/2;
+                    grid-row: 4;
+                   }
+                   .two-brand{
+                    grid-column: 2/3;
+                    grid-row: 3/4;
+                   }
+                   .three-brand{
+                    grid-column: 3/4;
+                    grid-row: 2/3;
+                   }
+                   .four-brand{
+                    grid-column: 4;
+                    grid-row: 1/2;
+                   }
+                }
+            }
+        }
+        #training{
+            .training-container{
+                width: 90%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding: 1rem;
+                .training-card{
+                    height: 50%;
+                    max-width: 400px;
+                    img{
+                        width: 70%;
+                        border-radius: 10px;
+                    }
+
+                }
+            }
+        }
+
+        #skills{
+            .skill-container{
+                .card-skill{
+                    max-width: 200px;
+                    width: 30%;
+                    font-size: 24px;
+                    .fa-brands{
+                        z-index: 3;
+                        font-size: 80px;
+                        color: var(--lightGray);
+                    }
+                    .fa-html5{
+                        position: relative;
+                        color: rgb(216, 73, 36);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 6px;
+                            right: 6px;
+                            width: 75%;
+                            height: 75%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-css3-alt{
+                        position: relative;
+                        color: rgb(36,73,216);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 6px;
+                            right: 6px;
+                            width: 75%;
+                            height: 75%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-js{
+                        color: rgb(234,212,28);
+                    }
+                    .fa-react{
+                        color: rgb(0,209,247);
+                    }
+                    .fa-git-alt{
+                        color: rgb(232,77,49);
+                    }
+                    .fa-github{
+                        color: rgb(26,29,33);
+                    }
+                }
+            }
+        }
+
+        #projects{
+            .projects-container{
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                .projects-card{
+                    width: 30%;
+                    max-width: 300px;
+                }
+            }
+        }
+
+        #contact{
+            .contact-container{
+                width: 60%;
+                padding: 2rem 0 ;
+                .contact-input{
+                    input{
+                        height:50px;
+                        font-size: 18px;
+                    }
+                    .big{
+                        height: 90px;
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -471,10 +832,154 @@ body{
 @media screen and ( min-width: 998px) {
     body{
         #home{
+
             .bubbles{
                 .bubble{
-                    width: 35px;
-                    height: 35px;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            .main-container{
+                z-index: 2;
+                text-align: center;
+                h1{
+                    font-size: 30px;
+                    text-align: center;
+                    line-height: 2rem;
+                    margin: 1rem;
+                    color:black;
+                    p{
+                        padding-top: 0.5rem;
+                        font-weight: 709;
+                        font-size: 34px;
+                    }
+                }
+                .cv{
+                    margin: 1.5rem 0 1rem 0;
+                    border-radius: 15px;
+                    padding: 0.2rem 0;
+                    background-color: rgba(53, 182, 173, 0.5);
+                    color: black;
+                    border: 1px solid black;
+                }
+                img{
+                    width: 80%;
+                    z-index: 5;
+                    margin-bottom: 2rem;
+                    max-width: 300px;
+                }
+            
+            }
+            
+        }
+        
+        
+        #skills{
+            .skill-container{
+                .card-skill{
+                    max-width: 300px;
+                    width: 30%;
+                    font-size: 28px;
+                    .fa-brands{
+                        z-index: 3;
+                        font-size: 110px;
+                        color: var(--lightGray);
+                    }
+                    .fa-html5{
+                        position: relative;
+                        color: rgb(216, 73, 36);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            width: 70%;
+                            height: 70%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-css3-alt{
+                        position: relative;
+                        color: rgb(36,73,216);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            width: 70%;
+                            height: 70%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-js{
+                        color: rgb(234,212,28);
+                    }
+                    .fa-react{
+                        color: rgb(0,209,247);
+                    }
+                    .fa-git-alt{
+                        color: rgb(232,77,49);
+                    }
+                    .fa-github{
+                        color: rgb(26,29,33);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 1300px) {
+    
+    body{
+        #skills{
+            .skill-container{
+                .card-skill{
+                    max-width: none;
+                    width: 30%;
+                    .fa-brands{
+                        z-index: 3;
+                        font-size: 200px;
+                        color: var(--lightGray);
+                    }
+                    .fa-html5{
+                        position: relative;
+                        color: rgb(216, 73, 36);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            width: 70%;
+                            height: 70%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-css3-alt{
+                        position: relative;
+                        color: rgb(36,73,216);
+                        .back{
+                            z-index: -1;
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            width: 70%;
+                            height: 70%;
+                            background-color: white;
+                        }
+                    }
+                    .fa-js{
+                        color: rgb(234,212,28);
+                    }
+                    .fa-react{
+                        color: rgb(0,209,247);
+                    }
+                    .fa-git-alt{
+                        color: rgb(232,77,49);
+                    }
+                    .fa-github{
+                        color: rgb(26,29,33);
+                    }
                 }
             }
         }

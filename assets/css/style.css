@@ -20,7 +20,7 @@ body {
   font-weight: 705;
   display: flex;
   flex-direction: column;
-  color: var(bone);
+  background: #f5f5f5;
 }
 body .container {
   position: fixed;
@@ -206,12 +206,13 @@ body section {
   padding: 2rem 0 3rem 0;
 }
 body #home {
-  background-color: var(--dark);
+  padding-top: 5rem;
 }
 body #home img {
-  width: 50%;
-  max-width: 300px;
+  width: 60%;
   z-index: 5;
+  margin-bottom: 2rem;
+  max-width: 300px;
 }
 body #home .main-container {
   z-index: 2;
@@ -222,23 +223,22 @@ body #home .main-container h1 {
   text-align: center;
   line-height: 2rem;
   margin: 1rem;
-  color: var(--lightGreen);
+  color: black;
 }
 body #home .main-container h1 p {
   font-weight: 709;
   font-size: 24px;
-  color: var(--lightGray);
 }
 body #home .main-container .cv {
   margin: 1.5rem 0 1rem 0;
   border-radius: 15px;
   padding: 0.2rem 0;
-  background-color: rgb(82, 64, 99);
+  background-color: rgba(53, 182, 173, 0.5);
   color: black;
+  border: 1px solid black;
 }
 body #home .main-container .typing {
   position: relative;
-  color: cadetblue;
   width: 180px;
 }
 body #home .main-container .typing::after {
@@ -247,20 +247,9 @@ body #home .main-container .typing::after {
   left: 0;
   height: 100%;
   width: 97%;
-  background-color: var(--dark);
-  border-left: 2px solid cadetblue;
-  -webkit-animation: typing 6s steps(19) infinite;
-          animation: typing 6s steps(19) infinite;
-}
-@-webkit-keyframes typing {
-  50% {
-    left: 97%;
-    width: 0px;
-  }
-  100% {
-    left: 0%;
-    width: 170px;
-  }
+  background-color: #f5f5f5;
+  border-left: 2px black;
+  animation: typing 6s steps(19) infinite;
 }
 @keyframes typing {
   50% {
@@ -269,70 +258,59 @@ body #home .main-container .typing::after {
   }
   100% {
     left: 0%;
-    width: 170px;
+    width: 180px;
   }
 }
 body #home .bubbles {
   z-index: 1;
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   width: 100%;
+  display: none;
 }
 body #home .bubbles .bubble {
   position: relative;
-  width: 10px;
-  height: 10px;
-  background-color: var(--lightGreen);
-  margin: 0 4px;
-  border-radius: 50% 1px 50% 1px;
-  box-shadow: 0 0 0 10px rgba(31, 49, 47, 0.6941176471), 0 0 50px #112f26, 0 0 100px #5e5e5e;
-  -webkit-animation: animate 15s linear infinite;
-          animation: animate 15s linear infinite;
-  -webkit-animation-duration: calc(120s / var(--i));
-          animation-duration: calc(120s / var(--i));
-}
-@-webkit-keyframes animate {
-  0% {
-    transform: translateY(100vh) scale(0);
-  }
-  100% {
-    transform: translateY(0) scale(0.5);
-  }
+  width: 5px;
+  height: 5px;
+  background-color: rgb(30, 30, 30);
+  border-radius: 50%;
 }
 @keyframes animate {
   0% {
-    transform: translateY(100vh) scale(0);
+    transform: translateX(130vh) scale(0.5);
   }
   100% {
-    transform: translateY(0) scale(0.5);
+    transform: translateX(0) scale(0.5);
   }
 }
 body h2 {
   z-index: 4;
   font-weight: 707;
   margin: 2rem;
-  color: rgb(209, 209, 209);
+  color: rgb(53, 181, 173);
 }
-body #about {
+body #about .about-text {
   display: flex;
   flex-direction: column;
-  background-color: var(--darkGreen);
+  align-items: center;
 }
-body #about p {
+body #about .about-text p {
   width: 90%;
+  max-width: 500px;
   z-index: 4;
   margin: 0 3rem;
-  color: whitesmoke;
+  color: rgb(0, 0, 0);
   text-align: justify;
-  background-color: rgba(46, 64, 63, 0.788);
+  background-color: transparent;
   border-radius: 20px;
   padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
 }
-body #about .media {
+body #about .about-text .media {
   z-index: 4;
-  background-color: rgba(46, 64, 63, 0.788);
   padding: 1rem;
   border-radius: 20px;
   margin-top: 1rem;
@@ -340,40 +318,35 @@ body #about .media {
   width: 70%;
   justify-content: space-around;
 }
-body #about .media a {
+body #about .about-text .media a {
   cursor: pointer;
 }
-body #about .media a .fa-brands {
+body #about .about-text .media a .fa-brands {
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
-}
-body #about img {
-  position: absolute;
-  width: 400px;
-  z-index: 1;
-  left: -150px;
-}
-body #skills {
-  background-color: var(--dark);
 }
 body #skills .skill-container {
-  width: 80%;
+  width: 90%;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  border: 1px solid grey;
+  padding: 2rem;
+  border-radius: 10px;
 }
 body #skills .skill-container .card-skill {
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: 100px;
-  height: 100px;
-  color: var(--bone);
-  border-radius: 50% 20%/10% 40%;
+  width: 50%;
+  max-width: 180px;
+  color: black;
+  border-radius: 10px;
   background-color: rgba(46, 64, 63, 0.505);
   box-shadow: 0 0 3px 2px rgb(32, 45, 45);
 }
@@ -420,14 +393,123 @@ body #skills .skill-container .card-skill .fa-git-alt {
 body #skills .skill-container .card-skill .fa-github {
   color: rgb(26, 29, 33);
 }
-body #training {
-  background-color: var(--darkGreen);
+body #training .training-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
 }
-body #projects {
-  background-color: var(--dark);
+body #training .training-container .training-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: solid 1px gray;
+  border-radius: 20px;
+  gap: 1rem;
+  width: 85%;
+  padding: 1rem 0.5rem;
+  background-color: #d9d9d9;
 }
-body #contact {
-  background-color: var(--darkGreen);
+body #training .training-container .training-card img {
+  width: 70%;
+  border-radius: 10px;
+}
+body #training .training-container .training-card p {
+  font-size: 11px;
+}
+body #projects .projects-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+body #projects .projects-container .projects-card {
+  width: 90%;
+  border: solid 1px gray;
+  border-radius: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #projects .projects-container .projects-card img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  border: solid 1px gray;
+}
+body #projects .projects-container .projects-card p {
+  width: 90%;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 400;
+}
+body #projects .projects-container .projects-card .button-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+  margin: 1rem 0;
+}
+body #projects .projects-container .projects-card .button-container button {
+  background-color: rgba(53, 181, 173, 0.5);
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  border: solid 1px gray;
+}
+body #contact .contact-container {
+  width: 70%;
+  border: solid 1px gray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+body #contact .contact-container .contact-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+body #contact .contact-container .contact-input input {
+  background-color: #f5f5f5;
+  border: solid 1px gray;
+  border-radius: 10px;
+  height: 40px;
+  width: 80%;
+  padding: 0 0.5rem;
+  background-color: #d9d9d9;
+}
+body #contact .contact-container .contact-input .big {
+  background-color: #f5f5f5;
+  border: solid 1px gray;
+  border-radius: 10px;
+  height: 60px;
+  width: 80%;
+  padding: 0 0.5rem;
+  background-color: #d9d9d9;
+}
+body #contact .contact-container button {
+  border-radius: 20px;
+  padding: 0.2rem 1.5rem;
+  border: solid 1px gray;
+  background-color: rgba(53, 181, 173, 0.5);
+}
+body .copyright {
+  padding: 0.5rem;
+  border-top: solid 1px gray;
+}
+body .copyright p {
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+body .copyright p span {
+  color: #4E8C90;
+  font-weight: 705;
 }
 
 @media screen and (min-width: 360px) {
@@ -449,14 +531,361 @@ body #contact {
   }
 }
 @media screen and (min-width: 720px) {
+  body .container .bar-menu {
+    display: none;
+  }
+  body .container .navbar {
+    border-bottom: 1px solid gray;
+  }
+  body .container .navbar .nav-link {
+    background-color: transparent;
+    position: fixed;
+    right: 10px;
+    top: 0;
+    display: flex;
+    height: 60px;
+    width: 80vw;
+    transition: none;
+    font-size: 20px;
+    padding: 1rem 0 0 0;
+    gap: 1rem;
+  }
+  body .container .navbar .nav-link li a {
+    color: rgb(53, 181, 173);
+  }
+  body .container .navbar .nav-link .one {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .nav-link .two {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .nav-link .three {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .nav-link .four {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .nav-link .five {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .nav-link .six {
+    position: static;
+    transition: none;
+  }
+  body .container .navbar .active-nav-link {
+    background-color: transparent;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: scroll;
+    height: 60px;
+    width: 100vw;
+    transition: none;
+    font-size: 20px;
+    padding: 1rem 1rem 0 1.5rem;
+    border-bottom: 1px solid gray;
+  }
+  body .container .navbar .active-nav-link li a {
+    color: rgb(53, 181, 173);
+  }
+  body .container .navbar .active-nav-link .one {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body .container .navbar .active-nav-link .two {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body .container .navbar .active-nav-link .three {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body .container .navbar .active-nav-link .four {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body .container .navbar .active-nav-link .five {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body .container .navbar .active-nav-link .six {
+    position: static;
+    transition: none;
+    background-color: transparent;
+  }
+  body #home {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+  }
   body #home .bubbles .bubble {
-    width: 30px;
-    height: 30px;
+    width: 5px;
+    height: 5px;
+  }
+  body #about .about-text {
+    width: 95%;
+    flex-direction: row;
+  }
+  body #about .about-text p {
+    width: 90%;
+    max-width: 500px;
+    z-index: 4;
+    margin: 0 3rem;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    font-size: 24px;
+  }
+  body #about .about-text .media {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: repear(4, 1fr);
+  }
+  body #about .about-text .media .one-brand {
+    grid-column: 1/2;
+    grid-row: 4;
+  }
+  body #about .about-text .media .two-brand {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  body #about .about-text .media .three-brand {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  body #about .about-text .media .four-brand {
+    grid-column: 4;
+    grid-row: 1/2;
+  }
+  body #training .training-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  body #training .training-container .training-card {
+    height: 50%;
+    max-width: 400px;
+  }
+  body #training .training-container .training-card img {
+    width: 70%;
+    border-radius: 10px;
+  }
+  body #skills .skill-container .card-skill {
+    max-width: 200px;
+    width: 30%;
+    font-size: 24px;
+  }
+  body #skills .skill-container .card-skill .fa-brands {
+    z-index: 3;
+    font-size: 80px;
+    color: var(--lightGray);
+  }
+  body #skills .skill-container .card-skill .fa-html5 {
+    position: relative;
+    color: rgb(216, 73, 36);
+  }
+  body #skills .skill-container .card-skill .fa-html5 .back {
+    z-index: -1;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 75%;
+    height: 75%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt {
+    position: relative;
+    color: rgb(36, 73, 216);
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt .back {
+    z-index: -1;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 75%;
+    height: 75%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-js {
+    color: rgb(234, 212, 28);
+  }
+  body #skills .skill-container .card-skill .fa-react {
+    color: rgb(0, 209, 247);
+  }
+  body #skills .skill-container .card-skill .fa-git-alt {
+    color: rgb(232, 77, 49);
+  }
+  body #skills .skill-container .card-skill .fa-github {
+    color: rgb(26, 29, 33);
+  }
+  body #projects .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  body #projects .projects-container .projects-card {
+    width: 30%;
+    max-width: 300px;
+  }
+  body #contact .contact-container {
+    width: 60%;
+    padding: 2rem 0;
+  }
+  body #contact .contact-container .contact-input input {
+    height: 50px;
+    font-size: 18px;
+  }
+  body #contact .contact-container .contact-input .big {
+    height: 90px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 998px) {
   body #home .bubbles .bubble {
-    width: 35px;
-    height: 35px;
+    width: 10px;
+    height: 10px;
+  }
+  body #home .main-container {
+    z-index: 2;
+    text-align: center;
+  }
+  body #home .main-container h1 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 2rem;
+    margin: 1rem;
+    color: black;
+  }
+  body #home .main-container h1 p {
+    padding-top: 0.5rem;
+    font-weight: 709;
+    font-size: 34px;
+  }
+  body #home .main-container .cv {
+    margin: 1.5rem 0 1rem 0;
+    border-radius: 15px;
+    padding: 0.2rem 0;
+    background-color: rgba(53, 182, 173, 0.5);
+    color: black;
+    border: 1px solid black;
+  }
+  body #home .main-container img {
+    width: 80%;
+    z-index: 5;
+    margin-bottom: 2rem;
+    max-width: 300px;
+  }
+  body #skills .skill-container .card-skill {
+    max-width: 300px;
+    width: 30%;
+    font-size: 28px;
+  }
+  body #skills .skill-container .card-skill .fa-brands {
+    z-index: 3;
+    font-size: 110px;
+    color: var(--lightGray);
+  }
+  body #skills .skill-container .card-skill .fa-html5 {
+    position: relative;
+    color: rgb(216, 73, 36);
+  }
+  body #skills .skill-container .card-skill .fa-html5 .back {
+    z-index: -1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt {
+    position: relative;
+    color: rgb(36, 73, 216);
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt .back {
+    z-index: -1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-js {
+    color: rgb(234, 212, 28);
+  }
+  body #skills .skill-container .card-skill .fa-react {
+    color: rgb(0, 209, 247);
+  }
+  body #skills .skill-container .card-skill .fa-git-alt {
+    color: rgb(232, 77, 49);
+  }
+  body #skills .skill-container .card-skill .fa-github {
+    color: rgb(26, 29, 33);
+  }
+}
+@media screen and (min-width: 1300px) {
+  body #skills .skill-container .card-skill {
+    max-width: none;
+    width: 30%;
+  }
+  body #skills .skill-container .card-skill .fa-brands {
+    z-index: 3;
+    font-size: 200px;
+    color: var(--lightGray);
+  }
+  body #skills .skill-container .card-skill .fa-html5 {
+    position: relative;
+    color: rgb(216, 73, 36);
+  }
+  body #skills .skill-container .card-skill .fa-html5 .back {
+    z-index: -1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt {
+    position: relative;
+    color: rgb(36, 73, 216);
+  }
+  body #skills .skill-container .card-skill .fa-css3-alt .back {
+    z-index: -1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+  }
+  body #skills .skill-container .card-skill .fa-js {
+    color: rgb(234, 212, 28);
+  }
+  body #skills .skill-container .card-skill .fa-react {
+    color: rgb(0, 209, 247);
+  }
+  body #skills .skill-container .card-skill .fa-git-alt {
+    color: rgb(232, 77, 49);
+  }
+  body #skills .skill-container .card-skill .fa-github {
+    color: rgb(26, 29, 33);
   }
 }/*# sourceMappingURL=style.css.map */
