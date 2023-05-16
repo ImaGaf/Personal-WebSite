@@ -13,16 +13,18 @@ const listFive = document.querySelector(".five")
 const listSix = document.querySelector(".six")
 
 function animateBar(){
-    line1Bar.classList.toggle("active-first");
-    line2Bar.classList.toggle("active-second");
-    line3Bar.classList.toggle("active-third");
-    menu.classList.toggle("active-nav-link")
-    listOne.classList.toggle("active-one")
-    listTwo.classList.toggle("active-two")
-    listThree.classList.toggle("active-three")
-    listFour.classList.toggle("active-four")
-    listFive.classList.toggle("active-five")
-    listSix.classList.toggle("active-six")
+    if(screen.width < 720){
+        line1Bar.classList.toggle("active-first");
+        line2Bar.classList.toggle("active-second");
+        line3Bar.classList.toggle("active-third");
+        menu.classList.toggle("active-nav-link")
+        listOne.classList.toggle("active-one")
+        listTwo.classList.toggle("active-two")
+        listThree.classList.toggle("active-three")
+        listFour.classList.toggle("active-four")
+        listFive.classList.toggle("active-five")
+        listSix.classList.toggle("active-six")
+    }
 }
 
 listOne.addEventListener("click", animateBar);
@@ -32,4 +34,7 @@ listFour.addEventListener("click", animateBar);
 listFive.addEventListener("click", animateBar);
 listSix.addEventListener("click", animateBar);
 
-
+window.addEventListener("scroll", function(){
+    let header = document.querySelector(".navbar");
+    header.classList.toggle("navbar-down", window.scrollY > 50)    
+})

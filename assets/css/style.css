@@ -197,6 +197,54 @@ body .container .navbar .active-nav-link .active-six {
   transition-duration: 2s;
   background-color: beige;
 }
+body .container .navbar .active-nav-link-down {
+  background-color: transparent;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  overflow-y: scroll;
+  height: 60px;
+  width: 100vw;
+  transition: none;
+  font-size: 20px;
+  padding: 1rem 1rem 0 1.5rem;
+  border-bottom: 1px solid gray;
+}
+body .container .navbar .active-nav-link-down li a {
+  color: rgb(53, 181, 173);
+}
+body .container .navbar .active-nav-link-down .one {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
+body .container .navbar .active-nav-link-down .two {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
+body .container .navbar .active-nav-link-down .three {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
+body .container .navbar .active-nav-link-down .four {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
+body .container .navbar .active-nav-link-down .five {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
+body .container .navbar .active-nav-link-down .six {
+  position: static;
+  transition: none;
+  background-color: transparent;
+}
 body section {
   display: flex;
   flex-direction: column;
@@ -553,6 +601,9 @@ body .copyright p span {
   body .container .navbar .nav-link li a {
     color: rgb(53, 181, 173);
   }
+  body .container .navbar .nav-link li a:hover {
+    border-bottom: solid 2px rgb(53, 181, 173);
+  }
   body .container .navbar .nav-link .one {
     position: static;
     transition: none;
@@ -593,7 +644,7 @@ body .copyright p span {
     border-bottom: 1px solid gray;
   }
   body .container .navbar .active-nav-link li a {
-    color: rgb(53, 181, 173);
+    color: rgb(0, 104, 97);
   }
   body .container .navbar .active-nav-link .one {
     position: static;
@@ -624,6 +675,9 @@ body .copyright p span {
     position: static;
     transition: none;
     background-color: transparent;
+  }
+  body .container .navbar-down {
+    background-color: rgb(210, 210, 210);
   }
   body #home {
     flex-direction: row-reverse;

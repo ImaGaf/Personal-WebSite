@@ -194,6 +194,56 @@ body{
                     background-color: beige;
                 }
             }
+            .active-nav-link-down{
+                background-color: transparent;
+                position: fixed;
+                right: 0;
+                top: 0;
+                display: flex;
+                justify-content: space-around;
+                overflow-y: scroll;
+                height: 60px;
+                width: 100vw;
+                transition: none;
+                font-size: 20px;
+                padding: 1rem 1rem 0 1.5rem;
+                border-bottom: 1px solid gray;
+                li{
+                    a{
+                        color: rgb(53,181,173); 
+                    }
+                }
+                .one{
+                    position:static;
+                    transition: none;  
+                    background-color: transparent;
+                }
+                .two{
+                    position:static;
+                    transition: none;
+                    background-color: transparent;
+                }
+                .three{
+                    position:static;
+                    transition: none;
+                    background-color: transparent;
+                }
+                .four{
+                    position:static;
+                    transition: none;
+                    background-color: transparent;
+                }
+                .five{
+                    position:static;
+                    transition: none;
+                    background-color: transparent;
+                }
+                .six{
+                    position:static;
+                    transition: none;
+                    background-color: transparent;
+                }
+            }
         }
     }
     section{
@@ -593,6 +643,9 @@ body{
                             a{
                                 color: rgb(53,181,173); 
                             }
+                            a:hover{
+                                border-bottom: solid 2px rgb(53,181,173);
+                            }
                         }
                         .one{
                             position:static;
@@ -635,7 +688,7 @@ body{
                         border-bottom: 1px solid gray;
                         li{
                             a{
-                                color: rgb(53,181,173); 
+                                color: rgb(0, 104, 97); 
                             }
                         }
                         .one{
@@ -670,7 +723,9 @@ body{
                         }
                     }
                 }
-
+                .navbar-down{
+                    background-color: rgba(210, 210, 210,1);
+                }
         }
         #home{
                 flex-direction: row-reverse;
@@ -797,7 +852,6 @@ body{
                 }
             }
         }
-
         #projects{
             .projects-container{
                 flex-direction: row;
@@ -809,7 +863,6 @@ body{
                 }
             }
         }
-
         #contact{
             .contact-container{
                 width: 60%;
