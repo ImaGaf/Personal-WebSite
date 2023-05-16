@@ -22,6 +22,9 @@ body {
   flex-direction: column;
   background: #f5f5f5;
 }
+body button:hover {
+  transform: scale(1.05);
+}
 body .container {
   position: fixed;
   width: 100%;
@@ -82,7 +85,8 @@ body .container .navbar .nav-link {
   transition-duration: 2s;
 }
 body .container .navbar .nav-link a {
-  color: white;
+  color: rgb(53, 181, 173);
+  border-bottom: 2px solid rgb(53, 181, 173);
 }
 body .container .navbar .nav-link .one {
   width: 100%;
@@ -147,7 +151,8 @@ body .container .navbar .active-nav-link {
   transition: 0.5s;
 }
 body .container .navbar .active-nav-link a {
-  color: white;
+  color: rgb(53, 181, 173);
+  border-bottom: 2px solid rgb(53, 181, 173);
 }
 body .container .navbar .active-nav-link .active-one {
   width: 100%;
@@ -155,7 +160,6 @@ body .container .navbar .active-nav-link .active-one {
   grid-row: 1/2;
   transition-delay: 0.2s;
   transition: 2s;
-  background-color: red;
 }
 body .container .navbar .active-nav-link .active-two {
   width: 100%;
@@ -163,7 +167,6 @@ body .container .navbar .active-nav-link .active-two {
   grid-row: 2/3;
   transition-delay: 0.7s;
   transition-duration: 2s;
-  background-color: green;
 }
 body .container .navbar .active-nav-link .active-three {
   width: 100%;
@@ -171,7 +174,6 @@ body .container .navbar .active-nav-link .active-three {
   grid-row: 3/4;
   transition-delay: 1.2s;
   transition-duration: 2s;
-  background-color: aqua;
 }
 body .container .navbar .active-nav-link .active-four {
   width: 100%;
@@ -179,7 +181,6 @@ body .container .navbar .active-nav-link .active-four {
   grid-row: 4/5;
   transition-delay: 1.7s;
   transition-duration: 2s;
-  background-color: purple;
 }
 body .container .navbar .active-nav-link .active-five {
   width: 100%;
@@ -187,7 +188,6 @@ body .container .navbar .active-nav-link .active-five {
   grid-row: 5/6;
   transition-delay: 2.2s;
   transition-duration: 2s;
-  background-color: palegreen;
 }
 body .container .navbar .active-nav-link .active-six {
   width: 100%;
@@ -195,7 +195,6 @@ body .container .navbar .active-nav-link .active-six {
   grid-row: 6/7;
   transition-delay: 2.7s;
   transition-duration: 2s;
-  background-color: beige;
 }
 body .container .navbar .active-nav-link-down {
   background-color: transparent;
@@ -285,6 +284,9 @@ body #home .main-container .cv {
   color: black;
   border: 1px solid black;
 }
+body #home .main-container .cv:hover {
+  transform: scale(1.05);
+}
 body #home .main-container .typing {
   position: relative;
   width: 180px;
@@ -317,7 +319,6 @@ body #home .bubbles {
   justify-content: space-between;
   height: 100vh;
   width: 100%;
-  display: none;
 }
 body #home .bubbles .bubble {
   position: relative;
@@ -325,10 +326,12 @@ body #home .bubbles .bubble {
   height: 5px;
   background-color: rgb(30, 30, 30);
   border-radius: 50%;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(60s / var(--i));
 }
 @keyframes animate {
   0% {
-    transform: translateX(130vh) scale(0.5);
+    transform: translateX(95vw) scale(0.5);
   }
   100% {
     transform: translateX(0) scale(0.5);
@@ -600,9 +603,13 @@ body .copyright p span {
   }
   body .container .navbar .nav-link li a {
     color: rgb(53, 181, 173);
+    border: none;
   }
   body .container .navbar .nav-link li a:hover {
     border-bottom: solid 2px rgb(53, 181, 173);
+  }
+  body .container .navbar .nav-link li:hover {
+    transform: scale(1.05);
   }
   body .container .navbar .nav-link .one {
     position: static;
@@ -687,6 +694,12 @@ body .copyright p span {
   body #home .bubbles .bubble {
     width: 5px;
     height: 5px;
+  }
+  body #home img {
+    width: 40%;
+    z-index: 5;
+    margin-bottom: 2rem;
+    max-width: none;
   }
   body #about .about-text {
     width: 95%;
@@ -839,11 +852,11 @@ body .copyright p span {
     color: black;
     border: 1px solid black;
   }
-  body #home .main-container img {
-    width: 80%;
+  body #home img {
+    width: 40%;
     z-index: 5;
     margin-bottom: 2rem;
-    max-width: 300px;
+    max-width: none;
   }
   body #skills .skill-container .card-skill {
     max-width: 300px;

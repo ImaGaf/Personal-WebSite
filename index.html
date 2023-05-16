@@ -157,13 +157,18 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <div class="contact-container">
-            <div class="contact-input">
-                <input type="text" placeholder="Name" >
-                <input type="email" placeholder="E-mail">
-                <textarea class="big" type="text" placeholder="Message"></textarea>
-            </div>
-            <button>Send</button>
+        <div class="contact-container" >
+            <form class="contact-input" id="form">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="email" name="email" id="email" placeholder="E-mail" required>
+                <textarea class="big" type="text" name="message" id="message" placeholder="Message" required></textarea>
+                <button id="buton" type="submit">Send</button>
+            </form>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script type="text/javascript">
+                emailjs.init("nc1BnCAhGdt8A8hUk")
+            </script>
         </div>
     </section>
     <div class="copyright">
@@ -171,5 +176,6 @@
     </div>
     <script src="./js/background.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/mail.js"></script>
 </body>
 </html>
