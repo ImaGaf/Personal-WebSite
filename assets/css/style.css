@@ -317,7 +317,7 @@ body #home .bubbles {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 body #home .bubbles .bubble {
@@ -565,20 +565,20 @@ body .copyright p span {
 
 @media screen and (min-width: 360px) {
   body #home .bubbles .bubble {
-    width: 15px;
-    height: 15px;
+    width: 6px;
+    height: 6px;
   }
 }
 @media screen and (min-width: 540px) {
   body #home .bubbles .bubble {
-    width: 20px;
-    height: 20px;
+    width: 8px;
+    height: 8px;
   }
 }
 @media screen and (min-width: 600px) {
   body #home .bubbles .bubble {
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
   }
 }
 @media screen and (min-width: 720px) {
@@ -692,8 +692,8 @@ body .copyright p span {
     margin-top: 4rem;
   }
   body #home .bubbles .bubble {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
   }
   body #home img {
     width: 40%;
