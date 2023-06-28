@@ -753,21 +753,10 @@ body .copyright p span {
     width: 60%;
   }
   body #about .about-text .profile_information .media {
+    margin-left: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: repear(20, 0.5fr);
-  }
-  body #about .about-text .profile_information .media .one-brand {
-    grid-column: 1/2;
-  }
-  body #about .about-text .profile_information .media .two-brand {
-    grid-column: 2/3;
-  }
-  body #about .about-text .profile_information .media .three-brand {
-    grid-column: 3/4;
-  }
-  body #about .about-text .profile_information .media .four-brand {
-    grid-column: 4;
+    grid-auto-rows: repeat(20, 0.5fr);
   }
   body #training .training-container {
     width: 90%;
