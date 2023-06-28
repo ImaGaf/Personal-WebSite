@@ -360,7 +360,19 @@ body #about .about-text p {
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
 }
-body #about .about-text .media {
+body #about .about-text .profile_information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #about .about-text .profile_information .profile_picture {
+  text-align: center;
+}
+body #about .about-text .profile_information .profile_picture img {
+  width: 60%;
+  max-width: 500px;
+}
+body #about .about-text .profile_information .media {
   z-index: 4;
   padding: 1rem;
   border-radius: 20px;
@@ -368,38 +380,44 @@ body #about .about-text .media {
   display: flex;
   width: 70%;
   justify-content: space-around;
+  gap: 2.25rem;
 }
-body #about .about-text .media a {
+body #about .about-text .profile_information .media a {
   cursor: pointer;
 }
-body #about .about-text .media a .fa-brands {
+body #about .about-text .profile_information .media a .fa-brands {
   font-size: 30px;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
+body #skills {
+  padding-bottom: 6rem;
+}
 body #skills .skill-container {
+  z-index: 10;
   width: 90%;
   display: flex;
   gap: 2rem;
+  padding: 2rem 1rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
   border: 1px solid grey;
-  padding: 2rem;
   border-radius: 10px;
 }
 body #skills .skill-container .card-skill {
-  padding: 1rem 0;
+  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: 40%;
+  width: 30%;
   max-width: 180px;
   color: black;
   border-radius: 10px;
-  background-color: #d9d9d9;
+  border: solid 1px gray;
   box-shadow: 0 0 3px 2px rgb(81, 103, 103);
+  font-size: 12px;
 }
 body #skills .skill-container .card-skill .fa-brands {
   z-index: 3;
@@ -443,6 +461,9 @@ body #skills .skill-container .card-skill .fa-git-alt {
 }
 body #skills .skill-container .card-skill .fa-github {
   color: rgb(26, 29, 33);
+}
+body #skills .skill-container .card-skill:hover {
+  transform: scale(1.05);
 }
 body #training .training-container {
   display: flex;
@@ -573,6 +594,9 @@ body .copyright p span {
   body #home .bubbles .bubble {
     width: 8px;
     height: 8px;
+  }
+  body #skills .skill-container {
+    width: 70%;
   }
 }
 @media screen and (min-width: 600px) {
@@ -717,26 +741,33 @@ body .copyright p span {
     padding: 1rem 1.5rem;
     font-size: 24px;
   }
-  body #about .about-text .media {
+  body #about .about-text .profile_information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #about .about-text .profile_information .profile_picture {
+    text-align: center;
+  }
+  body #about .about-text .profile_information .profile_picture img {
+    width: 60%;
+  }
+  body #about .about-text .profile_information .media {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: repear(4, 1fr);
+    grid-auto-rows: repear(20, 0.5fr);
   }
-  body #about .about-text .media .one-brand {
+  body #about .about-text .profile_information .media .one-brand {
     grid-column: 1/2;
-    grid-row: 4;
   }
-  body #about .about-text .media .two-brand {
+  body #about .about-text .profile_information .media .two-brand {
     grid-column: 2/3;
-    grid-row: 3/4;
   }
-  body #about .about-text .media .three-brand {
+  body #about .about-text .profile_information .media .three-brand {
     grid-column: 3/4;
-    grid-row: 2/3;
   }
-  body #about .about-text .media .four-brand {
+  body #about .about-text .profile_information .media .four-brand {
     grid-column: 4;
-    grid-row: 1/2;
   }
   body #training .training-container {
     width: 90%;
@@ -753,14 +784,18 @@ body .copyright p span {
     width: 70%;
     border-radius: 10px;
   }
+  body #skills .skill-container {
+    padding: 3rem;
+    width: 70%;
+  }
   body #skills .skill-container .card-skill {
-    max-width: 200px;
+    max-width: 120px;
     width: 30%;
-    font-size: 24px;
+    font-size: 16px;
   }
   body #skills .skill-container .card-skill .fa-brands {
     z-index: 3;
-    font-size: 80px;
+    font-size: 40px;
     color: var(--lightGray);
   }
   body #skills .skill-container .card-skill .fa-html5 {
@@ -860,12 +895,13 @@ body .copyright p span {
   }
   body #skills .skill-container .card-skill {
     max-width: 300px;
-    width: 30%;
-    font-size: 28px;
+    width: 20%;
+    margin: 0 2rem;
+    font-size: 16px;
   }
   body #skills .skill-container .card-skill .fa-brands {
     z-index: 3;
-    font-size: 110px;
+    font-size: 50px;
     color: var(--lightGray);
   }
   body #skills .skill-container .card-skill .fa-html5 {
@@ -875,8 +911,8 @@ body .copyright p span {
   body #skills .skill-container .card-skill .fa-html5 .back {
     z-index: -1;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     width: 70%;
     height: 70%;
     background-color: white;
@@ -888,8 +924,8 @@ body .copyright p span {
   body #skills .skill-container .card-skill .fa-css3-alt .back {
     z-index: -1;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     width: 70%;
     height: 70%;
     background-color: white;

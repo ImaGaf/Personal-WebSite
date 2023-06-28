@@ -365,55 +365,70 @@ body{
                 margin: 0 3rem;
                 color: rgb(0, 0, 0);
                 text-align:justify;
-                //background-color:rgba(46, 64, 63, 0.788);
                 background-color: transparent;
                 border-radius: 20px;
                 padding: 1rem 1.5rem;
                 margin-bottom: 2rem;
             }
-            .media{
-                z-index: 4;
-                //background-color:rgba(46, 64, 63, 0.788) ;
-                padding: 1rem;
-                border-radius: 20px;
-                margin-top: 1rem;
+            .profile_information{
                 display: flex;
-                width: 70%;
-                justify-content: space-around;
-                a{
-                    cursor: pointer;
-                    .fa-brands{
-                        font-size: 30px;
-                        color: rgb(0, 0, 0);
+                flex-direction: column;
+                align-items: center;
+                .profile_picture{
+                   text-align: center;
+                    img{
+                        width: 60%;
+                        max-width: 500px;
+                    }
+                }
+                .media{
+                    z-index: 4;
+                    padding: 1rem;
+                    border-radius: 20px;
+                    margin-top: 1rem;
+                    display: flex;
+                    width: 70%;
+                    justify-content: space-around;
+                    gap: 2.25rem;
+                    a{
                         cursor: pointer;
+                        .fa-brands{
+                            font-size: 30px;
+                            color: rgb(0, 0, 0);
+                            cursor: pointer;
+                        }
                     }
                 }
             }
         }
     }
     #skills{
+        padding-bottom: 6rem;
         .skill-container{
+            z-index: 10;
             width: 90%;
             display: flex;
             gap: 2rem;
+            padding: 2rem 1rem;
             flex-wrap: wrap;   
             justify-content: space-evenly;  
             border: 1px solid grey;
-            padding: 2rem;
             border-radius: 10px;  
             .card-skill{
-                padding: 1rem 0;
+                padding: 0.5rem 1rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 0.5rem;
-                width: 40%;
+                width: 30%;
                 max-width: 180px;
                 color: black;
                 border-radius: 10px;
-                background-color: #d9d9d9;
+                border: solid 1px gray;
+                //background-color: #d9d9d9;
                 box-shadow: 0 0 3px 2px rgb(81, 103, 103);
+                font-size: 12px;
                 .fa-brands{
                     z-index: 3;
                     font-size: 40px;
@@ -457,6 +472,9 @@ body{
                 .fa-github{
                     color: rgb(26,29,33);
                 }
+            }
+            .card-skill:hover{
+                transform: scale(1.05);
             }
         }
     }
@@ -609,6 +627,12 @@ body{
                     height: 8px;
                 }
             }
+        }
+        #skills{
+            .skill-container{
+                width: 70%;
+            }
+
         }
     }
 
@@ -777,27 +801,36 @@ body{
                     padding: 1rem 1.5rem;
                     font-size: 24px;
                 }
-                .media{
-                   display: grid;
-                   grid-template-columns: repeat(4, 1fr);
-                   grid-auto-rows: repear(4,1fr);
-                   .one-brand{
-                    grid-column: 1/2;
-                    grid-row: 4;
-                   }
-                   .two-brand{
-                    grid-column: 2/3;
-                    grid-row: 3/4;
-                   }
-                   .three-brand{
-                    grid-column: 3/4;
-                    grid-row: 2/3;
-                   }
-                   .four-brand{
-                    grid-column: 4;
-                    grid-row: 1/2;
-                   }
+                .profile_information{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .profile_picture{
+                       text-align: center;
+                        img{
+                            width: 60%;
+                        }
+                    }
+                    .media{
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-auto-rows: repear(20,0.5fr);
+                        
+                        .one-brand{
+                         grid-column: 1/2;
+                        }
+                        .two-brand{
+                         grid-column: 2/3;
+                        }
+                        .three-brand{
+                         grid-column: 3/4;;
+                        }
+                        .four-brand{
+                         grid-column: 4;
+                        }
+                     }
                 }
+            
             }
         }
         #training{
@@ -821,13 +854,15 @@ body{
 
         #skills{
             .skill-container{
+                padding: 3rem;
+                width: 70%;
                 .card-skill{
-                    max-width: 200px;
+                    max-width: 120px;
                     width: 30%;
-                    font-size: 24px;
+                    font-size: 16px;
                     .fa-brands{
                         z-index: 3;
-                        font-size: 80px;
+                        font-size: 40px;
                         color: var(--lightGray);
                     }
                     .fa-html5{
@@ -947,11 +982,12 @@ body{
             .skill-container{
                 .card-skill{
                     max-width: 300px;
-                    width: 30%;
-                    font-size: 28px;
+                    width: 20%;
+                    margin: 0 2rem;
+                    font-size: 16px;
                     .fa-brands{
                         z-index: 3;
-                        font-size: 110px;
+                        font-size: 50px;
                         color: var(--lightGray);
                     }
                     .fa-html5{
@@ -960,8 +996,8 @@ body{
                         .back{
                             z-index: -1;
                             position: absolute;
-                            top: 15px;
-                            right: 15px;
+                            top: 5px;
+                            right: 5px;
                             width: 70%;
                             height: 70%;
                             background-color: white;
@@ -973,8 +1009,8 @@ body{
                         .back{
                             z-index: -1;
                             position: absolute;
-                            top: 15px;
-                            right: 15px;
+                            top: 5px;
+                            right: 5px;
                             width: 70%;
                             height: 70%;
                             background-color: white;
